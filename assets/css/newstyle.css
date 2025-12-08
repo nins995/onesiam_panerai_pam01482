@@ -1,0 +1,601 @@
+/* === Fonts === */
+@font-face {
+  font-family: 'MyriadVariableConcept-Roman';
+  src: url('../fonts/MyriadVariableConcept-Roman.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  height: 100%;
+overflow-x: hidden;  /* Prevent horizontal scroll */
+  overflow-y: auto;    /* Allow vertical scroll */
+  scroll-snap-type: y mandatory;
+  background-color: #0d1429;
+}
+
+h1, h2 {
+  font-family: 'MyriadVariableConcept-Roman', sans-serif;
+}
+.font-Roman {
+  font-family: 'MyriadVariableConcept-Roman', sans-serif;
+}
+
+/* === Sticky Icons === */
+.sticky-icon {
+  position: fixed;
+  top: 5px;
+  z-index: 1000;
+  width: auto;
+  height: 70px;
+  max-height: 12vh;
+}
+.sticky-icon.left { left: 20px; }
+.sticky-icon.right { right: 20px; }
+
+@media (max-width: 1023px) {
+  .sticky-icon {
+    top: 10px;
+    height: 40px;
+  }
+  .sticky-icon.left { left: 10px; }
+  .sticky-icon.right { right: 10px; }
+}
+
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+  .sticky-icon {
+    top: 10px;
+    height: 30px;
+  }
+  .sticky-icon.left { left: 10px; }
+  .sticky-icon.right { right: 10px; }
+}
+
+/* === Page Sections === */
+.page-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+/* === Section Background Gradients === */
+.section1 { background: linear-gradient(180deg, #101429, #101429); }
+.section2 { background: linear-gradient(180deg, #0d1329, #0e142b); }
+.section3 { background: linear-gradient(180deg, #0f1329, #13172c); }
+.section4 { background: linear-gradient(180deg, #13172d, #1f264d); }
+.section5 { background: linear-gradient(180deg, #1d264e, #303c6b); }
+.section6 { background: linear-gradient(180deg, #303d6b, #34477a); }
+.section7 { background: linear-gradient(180deg, #34497c, #34497c); }
+.section8 { background: linear-gradient(180deg, #34497c, #314275); }
+
+/* === Section Images === */
+.section-img {
+  height: 100vh;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1023px) {
+  .section-img {
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+  .section-img {
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    margin-top: -50px;
+  }
+}
+
+
+/* === Section Buttons === */
+.section-btn {
+  position: absolute;
+  bottom: 5vh;
+  height: 8vh;
+  left: 50%;
+  width: 44vh;
+  transform: translateX(-50%);
+  padding: 12px 30px;
+  font-size: 18px;
+  color: #fff;
+  background-color: transparent;
+  /* border: 2px solid #fff; */
+  border-radius: 8px;
+  text-decoration: none;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+/* .section-btn:hover {
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.05);
+} */
+
+.transparent-btn {
+  padding: 0;
+  width: 100%;
+  background: none;
+  border: none;
+}
+
+@media (max-width: 1023px) {
+  .section-btn {
+        width: 58vw;
+        /* max-width: 300px; */
+        font-size: 16px;
+        text-align: center;
+        bottom: calc(50% - 68vw);
+        height: 12vw;
+      
+  }
+}
+
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+    .section-btn {      
+        width: 56vw;
+        font-size: 16px;
+        text-align: center;
+        bottom: calc(50% - 68vw + 50px);
+        height: 9vw;      
+  }
+}
+
+/* === Form Containers Common === */
+.form-container {
+  position: absolute;
+  top: 50%;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Section 3 form image */
+.form-container.right .form-image {
+    width: 52vh;          /* allow natural width */
+    max-width: unset;     /* do not exceed 500px */
+    height: auto;         /* maintain aspect ratio */
+    margin-bottom: 10px;
+    display: block;       /* block element for proper spacing */
+}
+
+.form-container.left .form-image 
+{
+  width: 100%;
+  margin: auto;
+}
+/* .form-container.left .form-image {
+   width: auto;         
+    max-width: 400px;    
+} */
+
+/* Form remains centered */
+/* .form-container.right .form-content { */
+    /* width: 52vh; */
+    /* max-width: 400px;   */
+    /* margin: 0 auto;       center form content */
+/* } */
+
+/* Form content */
+.form-container .form-content {
+  width: 100%;
+}
+
+.form-container.right .form-content {
+      width: 48vh;
+
+}
+
+/* Submit Button */
+.form-container .btn-submit {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  transition: all 0.5s ease;
+  border-radius: 0 !important; 
+  cursor: pointer;
+}
+.form-container .btn-submit:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* Checkbox Label Gray */
+.form-check-label {
+  color: #888;
+  font-size: 14px;
+  font-family: 'MyriadVariableConcept-Roman', sans-serif;
+}
+
+.form-check-input {
+  width: 12px;     /* default 1rem (16px), you can reduce more */
+  height: 12px;/* remove border */
+  border-radius: 0 !important; 
+  margin: 0 !important; 
+  vertical-align: middle !important;
+}
+.form-check {
+  padding-left: 0 !important;     /* remove Bootstrap padding */
+  margin-left: 0 !important;
+  display: flex;
+  align-items: center;   /* vertical alignment */
+  gap: 8px;              /* spacing between box + text */
+}
+
+/* === Right-Half Form (Section 3) === */
+.form-container.right {
+    position: absolute;
+    top: 50%;                 /* vertical center */
+    left: 75%;                /* center of right half */
+    transform: translate(-50%, -50%); /* horizontal center in right half and vertical center */
+    width: 50%;               /* occupy right half */
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Left-half form (Section 7) */
+.form-container.left {
+    position: absolute;
+    top: 50%;                 /* vertical center */
+    /* left: 25%; */
+    transform: translate(-50%, -50%); /* horizontal center in left half and vertical center */
+    width: 50%;               /* occupy left half */
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+/* === Mobile Responsive for Forms === */
+@media (max-width: 1023px) {
+
+  .form-container.right .form-image {
+    margin-bottom: 5px;
+  }
+
+  .form-container .form-content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .form-container.right .form-content {
+    min-width: 100% !important;
+  }
+
+    /* Left form fully centered */
+    .form-container.left {
+      top: 50%;
+      left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: none;
+        /* margin: auto; */
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    /* Right form: horizontally centered, vertical at half of page */
+    .form-container.right {
+        left: 50%;
+        top: 50%;            /* still top 50% */
+        transform: translateX(-50%); /* only horizontal centering */
+        width: 100%;
+        padding: 0 30px;
+        max-width: none;
+    }
+    .form-container.right .form-image {
+        /* display: none; */
+        width: 100%;
+        max-width: 90%
+    }
+}
+
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+    .form-container .form-content {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    /* Left form fully centered */
+    .form-container.left {
+        left: 0;
+        /* bottom: 15vw; */
+        transform: unset;
+        width: 100%;
+        max-width: none;
+        /* margin: auto; */
+        padding-left: 10%;
+        padding-right: 10%;
+        top: unset;        
+    }
+
+    /* Right form: horizontally centered, vertical at half of page */
+    .form-container.right {
+        left: 50%;
+        top: 50%;            /* still top 50% */
+        transform: translateX(-50%); /* only horizontal centering */
+        width: 100%;
+        padding: 0 30px;
+        max-width: none;
+        max-width: 500px;
+    }
+    .form-container.right .form-image {
+        /* display: none; */
+        width: 100%;
+    }
+}
+
+.slider-container {
+  position: relative;
+  width: 45%;
+  overflow: hidden;
+  margin-left: 12vw;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.slider img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+button:hover {
+  background:transparent;
+}
+
+@media only screen and (max-width: 1023px) {
+.slider-container {   
+    width: 100%;
+    margin-left: 0vw;
+  }
+
+  .section4 .position-absolute {
+    top: 0%;
+  } 
+}
+
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+.slider-container {   
+    width: 100%;
+    margin-left: 0vw;
+  }
+
+  .section4 .position-absolute {
+    top: 0%;
+  } 
+}
+
+@media only screen 
+  and (width: 768px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+
+  .form-container.right .form-image {
+    width: 60%;
+    max-width: 60%;
+  }
+
+  .form-container.right .form-content {
+    min-width: 60% !important;
+    width: 60% !important;
+}
+}
+
+@media only screen and (max-width: 767px) {
+
+  .slider-container {   
+    width: 100%;
+    margin-left: 0vw;
+  }
+
+  .section4 .position-absolute {
+    top: 7.5%;
+  } 
+  
+}
+
+/* Inputs */
+.form-control {
+  background: transparent !important;
+  height: 39px;
+  border: 1px solid #7f7f7f !important;
+  color: #fff !important;
+  border-radius: 0 !important;   /* ← square corners */
+}
+
+/* Placeholder */
+.form-control::placeholder {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+/* Focus */
+.form-control:focus {
+  background: transparent !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+.sec-7 {
+  max-width: 100vw;
+  bottom: 0vh;
+  position: absolute;
+}
+
+
+@media (max-width: 1023px) {
+  .form-control {
+    height: 32px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .sec-7 {
+    display: none;
+  }
+}
+
+
+@media only screen 
+  and (width: 1024px)
+  and (orientation: portrait)
+  and (hover: none)
+  and (pointer: coarse) {
+  .sec-7 {
+      display: inline;
+    }
+    .form-container .form-content {
+      width: 100%;
+        max-width: 500px;
+      }
+
+
+    .section4 .position-absolute {
+      top: -4%;
+    } 
+
+  }
+
+
+
+
+  @media (min-width: 1100px) {
+  .form-container.left {
+    position: absolute;
+        top: unset;
+        left: unset;
+        transform: unset;
+        width: 50%;
+        width: 130vh;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        z-index: 2;
+        /* background-color: red; */
+      
+    }	
+
+  .section7 .form-container .form-content {
+    width: 100%;
+    max-width: 72vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+  }
+  .section7 .form-image {
+    margin-left: 0vw;
+  }
+
+  }
+
+    @media (min-width: 1280px) {
+  .form-container.left {
+    position: absolute;
+        top: unset;
+        left: unset;
+        transform: unset;
+        width: 50%;
+        width: 130vh;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        z-index: 2;
+        /* background-color: red; */
+      
+    }	
+
+  .section7 .form-container .form-content {
+    width: 100%;
+    max-width: 72vh;
+    padding-left: 8vw;
+    padding-right: 8vw;
+
+  }
+  /* .section7 .form-image {
+    margin-left: 8vw;
+  } */
+
+   /* .section7 .form-container.left .form-image {
+      width: 47vh;
+       margin-left: 8vw;
+    } */
+  }
