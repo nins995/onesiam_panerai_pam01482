@@ -194,7 +194,7 @@ h1, h2 {
 
 /* Section 3 form image */
 .form-container.right .form-image {
-    width: 52vh;          /* allow natural width */
+    width: 64vh;          /* allow natural width */
     max-width: unset;     /* do not exceed 500px */
     height: auto;         /* maintain aspect ratio */
     margin-bottom: 10px;
@@ -479,7 +479,7 @@ button:hover {
 
 /* Inputs */
 .form-control {
-  background: transparent !important;
+  background: #fff !important;
   height: 39px;
   border: 1px solid #7f7f7f !important;
   color: #fff !important;
@@ -488,7 +488,7 @@ button:hover {
 
 /* Placeholder */
 .form-control::placeholder {
-  color: #ffffff !important;
+  color: gray !important;
   opacity: 1;
 }
 
