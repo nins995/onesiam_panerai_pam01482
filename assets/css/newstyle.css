@@ -82,18 +82,17 @@ h1, h2 {
 }
 
 /* === Section Background Gradients === */
-.section1 { background: linear-gradient(180deg, #0d1523, #000000); }
+.section1 { background: linear-gradient(180deg, #0d1322, #000004); }
 .section2 { background: linear-gradient(180deg, #000000, #000000); }
-.section3 { background: linear-gradient(180deg, #0E1219, #000000); }
-.section4 { background: linear-gradient(180deg, #030303, #030303); }
-.section5 { background: linear-gradient(180deg, #030303, #030303); }
-.section6 { background: linear-gradient(180deg, #030303, #030303); }
-.section7 { background: linear-gradient(180deg, #030303, #030303); }
-.section8 { background: linear-gradient(180deg, #030303, #030303); }
-.section9 { background: linear-gradient(180deg, #030303, #030303); }
-.section10 { background: linear-gradient(180deg, #626265, #000000); }
+.section3 { background: linear-gradient(180deg, #0a0f15, #000000); }
+.section4 { background: linear-gradient(180deg, #040505, #040505); }
+.section5 { background: linear-gradient(180deg, #040505, #040505); }
+.section6 { background: linear-gradient(180deg, #040505, #040505); }
+.section7 { background: linear-gradient(180deg, #040505, #040505); }
+.section8 { background: linear-gradient(180deg, #040505, #040505); }
+.section9 { background: linear-gradient(180deg, #040505, #000000); }
+.section10 { background: linear-gradient(180deg, #7a7a7d, #000000); }
 .section-submitted { background: linear-gradient(180deg, #34497c, #314275); }
-
 
 /* === Section Images === */
 .section-img {
