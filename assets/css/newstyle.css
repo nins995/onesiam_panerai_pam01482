@@ -197,7 +197,7 @@ h1, h2 {
     width: 64vh;          /* allow natural width */
     max-width: unset;     /* do not exceed 500px */
     height: auto;         /* maintain aspect ratio */
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     display: block;       /* block element for proper spacing */
 }
 
@@ -304,7 +304,7 @@ h1, h2 {
 @media (max-width: 1023px) {
 
   .form-container.right .form-image {
-    margin-bottom: 5px;
+    margin-bottom: 12px;
   }
 
   .form-container .form-content {
@@ -330,7 +330,7 @@ h1, h2 {
     /* Right form: horizontally centered, vertical at half of page */
     .form-container.right {
         left: 50%;
-        top: 50%;            /* still top 50% */
+        top: 56.5%;            /* still top 50% */
         transform: translateX(-50%); /* only horizontal centering */
         width: 100%;
         padding: 0 30px;
