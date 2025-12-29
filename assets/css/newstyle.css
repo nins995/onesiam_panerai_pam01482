@@ -136,7 +136,7 @@ h1, h2 {
   font-size: 18px;
   color: #fff;
   background-color: transparent;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   border-radius: 8px;
   text-decoration: none;
   z-index: 10;
