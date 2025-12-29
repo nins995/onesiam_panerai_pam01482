@@ -282,7 +282,67 @@
         </form>
       </div>
     </section>
-    <section id="section8" class="page-section section8 d-none">
+    <section class="page-section section8">
+      <picture>
+        <!-- Mobile image -->
+        <source
+          media="(max-width: 1023px)"
+          srcset="./assets/images/product/product-mobile-8.jpg"
+        />
+
+        <source
+          media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
+          srcset="./assets/images/product/product-mobile-8.jpg"
+        />
+        <!-- Desktop image -->
+        <img
+          src="./assets/images/product/product-8.jpg"
+          class="section-img"
+          alt=""
+        />
+      </picture>
+    </section>
+    <section class="page-section section9">
+      <picture>
+        <!-- Mobile image -->
+        <source
+          media="(max-width: 1023px)"
+          srcset="./assets/images/product/product-mobile-9.jpg"
+        />
+
+        <source
+          media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
+          srcset="./assets/images/product/product-mobile-9.jpg"
+        />
+        <!-- Desktop image -->
+        <img
+          src="./assets/images/product/product-9.jpg"
+          class="section-img"
+          alt=""
+        />
+      </picture>
+    </section>
+    <section class="page-section section10">
+      <picture>
+        <!-- Mobile image -->
+        <source
+          media="(max-width: 1023px)"
+          srcset="./assets/images/product/product-mobile-10.jpg"
+        />
+
+        <source
+          media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
+          srcset="./assets/images/product/product-mobile-10.jpg"
+        />
+        <!-- Desktop image -->
+        <img
+          src="./assets/images/product/product-10.jpg"
+          class="section-img"
+          alt=""
+        />
+      </picture>
+    </section>
+    <section id="section-submitted" class="page-section section-submitted d-none">
       <picture>
         <!-- Mobile image -->
         <source
@@ -321,17 +381,17 @@
         // Handle form submissions
         const form1 = document.getElementById('form1');
         const form2 = document.getElementById('form2');
-        const section8 = document.getElementById('section8');
+        const sectionSubmitted = document.getElementById('section-submitted');
 
         function handleFormSubmit(e) {
           e.preventDefault();
           
           // Show section 8
-          section8.classList.remove('d-none');
+          sectionSubmitted.classList.remove('d-none');
           
           // Scroll to section 8
           setTimeout(() => {
-            section8.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            sectionSubmitted.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }
 
