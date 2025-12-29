@@ -36,7 +36,11 @@ h1, h2 {
   height: 70px;
   max-height: 12vh;
 }
-.sticky-icon.left { left: 20px; }
+.sticky-icon.left { 
+  left: 20px; 
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
 .sticky-icon.right { right: 20px; }
 
 @media (max-width: 1023px) {
@@ -44,7 +48,11 @@ h1, h2 {
     top: 10px;
     height: 40px;
   }
-  .sticky-icon.left { left: 10px; }
+  .sticky-icon.left { 
+    left: 10px;
+    padding-top: 12px;
+    padding-bottom: 16px;
+   }
   .sticky-icon.right { right: 10px; }
 }
 
@@ -119,16 +127,16 @@ h1, h2 {
 /* === Section Buttons === */
 .section-btn {
   position: absolute;
-  bottom: 5vh;
-  height: 8vh;
+  bottom: 4vh;
+  height: 7vh;
   left: 50%;
-  width: 44vh;
+  width: 43vh;
   transform: translateX(-50%);
   padding: 12px 30px;
   font-size: 18px;
   color: #fff;
   background-color: transparent;
-  /* border: 2px solid #fff; */
+  border: 2px solid red;
   border-radius: 8px;
   text-decoration: none;
   z-index: 10;
