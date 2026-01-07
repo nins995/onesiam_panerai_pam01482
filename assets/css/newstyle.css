@@ -416,7 +416,7 @@ h2 {
 
 .slider-container {
   position: relative;
-  width: 65%; /* Changed from 30% to 50% */
+  width: 35%; /* Changed from 30% to 50% */
   max-width: 800px; /* Changed from 600px to 800px */
   overflow: hidden;
   margin: auto;
