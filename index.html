@@ -136,7 +136,7 @@
       </picture>
       <a href="#section10" class="section-btn"></a>
     </section>
-    
+
     <section class="page-section section4">
       <picture>
         <!-- Mobile image -->
@@ -199,67 +199,45 @@
       <a href="#section10" class="section-btn"></a>
     </section>
     <section class="page-section section7">
+      <!-- Background Image -->
       <picture>
-        <!-- Mobile image -->
+        <!-- Mobile background -->
         <source
           media="(max-width: 1023px)"
           srcset="./assets/images/product/product-mobile-7.jpg"
         />
-
         <source
           media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
           srcset="./assets/images/product/product-mobile-7.jpg"
         />
-        <!-- Desktop image -->
+        <!-- Desktop background -->
         <img
           src="./assets/images/product/product-7.jpg"
           class="section-img"
           alt=""
         />
       </picture>
-      <a href="#section10" class="section-btn"></a>
-    </section>
-    
-    <section class="page-section section8">
-      <picture>
-        <!-- Mobile image -->
-        <source
-          media="(max-width: 1023px)"
-          srcset="./assets/images/product/product-mobile-8.jpg"
-        />
 
-        <source
-          media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
-          srcset="./assets/images/product/product-mobile-8.jpg"
-        />
-        <!-- Desktop image -->
-        <img
-          src="./assets/images/product/product-8.jpg"
-          class="section-img"
-          alt=""
-        />
-      </picture>
-      <a href="#section10" class="section-btn"></a>
-    </section>
-    <section class="page-section section9">
-      <picture>
-        <!-- Mobile image -->
-        <source
-          media="(max-width: 1023px)"
-          srcset="./assets/images/product/product-mobile-9.jpg"
-        />
+      <div class="position-absolute">
+        <div class="slider-container">
+          <div class="slider">
+            <img
+              src="./assets/images/product/slider-product-1.png?text=Slide+1"
+            />
+            <img
+              src="./assets/images/product/slider-product-2.png?text=Slide+2"
+            />
+            <img
+              src="./assets/images/product/slider-product-3.png?text=Slide+3"
+            />
+          </div>
+        </div>
 
-        <source
-          media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
-          srcset="./assets/images/product/product-mobile-9.jpg"
-        />
-        <!-- Desktop image -->
-        <img
-          src="./assets/images/product/product-9.jpg"
-          class="section-img"
-          alt=""
-        />
-      </picture>
+        <!-- Buttons outside slider-container but inside position-absolute -->
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+      </div>
+
       <a href="#section10" class="section-btn"></a>
     </section>
     <section class="page-section section10" id="section10">
@@ -290,7 +268,6 @@
           alt="Image"
         />
         <form class="form-content" id="form2">
-
           <div class="my-2">
             <input
               type="text"
@@ -328,7 +305,6 @@
           <button type="submit" class="transparent-btn">
             <img src="./assets/images/product/form-button.png" class="w-100" />
           </button>
-        
         </form>
         <img
           src="./assets/images/product/product-10-text2.png"
@@ -337,21 +313,24 @@
         />
       </div>
     </section>
-    <section id="section-submitted" class="page-section section-submitted d-none">
+    <section
+      id="section-submitted"
+      class="page-section section-submitted d-none"
+    >
       <picture>
         <!-- Mobile image -->
         <source
           media="(max-width: 1023px)"
-          srcset="./assets/images/product/product-mobile-8.jpg"
+          srcset="./assets/images/product/product-mobile-7.jpg"
         />
 
         <source
           media="(width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse)"
-          srcset="./assets/images/product/product-mobile-8.jpg"
+          srcset="./assets/images/product/product-mobile-7.jpg"
         />
         <!-- Desktop image -->
         <img
-          src="./assets/images/product/product-8.jpg"
+          src="./assets/images/product/product-7.jpg"
           class="section-img"
           alt=""
         />
@@ -372,29 +351,101 @@
             }
           });
         });
-
+        /*
         // Handle form submissions
-        const form1 = document.getElementById('form1');
-        const form2 = document.getElementById('form2');
-        const sectionSubmitted = document.getElementById('section-submitted');
+        const form1 = document.getElementById("form1");
+        const form2 = document.getElementById("form2");
+        const sectionSubmitted = document.getElementById("section-submitted");
 
         function handleFormSubmit(e) {
           e.preventDefault();
-          
+
           // Show section 8
-          sectionSubmitted.classList.remove('d-none');
-          
+          sectionSubmitted.classList.remove("d-none");
+
           // Scroll to section 8
           setTimeout(() => {
-            sectionSubmitted.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            sectionSubmitted.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
           }, 100);
         }
 
-        form1.addEventListener('submit', handleFormSubmit);
-        form2.addEventListener('submit', handleFormSubmit);
+        form1.addEventListener("submit", handleFormSubmit);
+        form2.addEventListener("submit", handleFormSubmit);
+      */
       });
     </script>
 
+    <script>
+      let index = 1;
+      const slider = document.querySelector(".slider");
+      let slides = document.querySelectorAll(".slider img");
 
+      // Clone first & last
+      const firstClone = slides[0].cloneNode(true);
+      const lastClone = slides[slides.length - 1].cloneNode(true);
+
+      slider.appendChild(firstClone);
+      slider.insertBefore(lastClone, slides[0]);
+
+      slides = document.querySelectorAll(".slider img");
+
+      // Set initial slide
+      function updateSlide(animate = true) {
+        const width = slider.clientWidth;
+
+        slider.style.transition = animate ? "transform 0.4s ease" : "none";
+        slider.style.transform = `translateX(${-width * index}px)`;
+      }
+
+      function nextSlide() {
+        if (index >= slides.length - 1) return;
+        index++;
+        updateSlide();
+      }
+
+      function prevSlide() {
+        if (index <= 0) return;
+        index--;
+        updateSlide();
+      }
+
+      slider.addEventListener("transitionend", () => {
+        const realSlidesCount = slides.length - 2;
+
+        // If reached the cloned last slide → jump to real first
+        if (index === slides.length - 1) {
+          index = 1;
+          updateSlide(false);
+        }
+
+        // If reached the cloned first slide → jump to real last
+        if (index === 0) {
+          index = realSlidesCount;
+          updateSlide(false);
+        }
+      });
+
+      // Start position
+      window.onload = () => updateSlide(false);
+
+      // Buttons
+      document.querySelector(".next").onclick = nextSlide;
+      document.querySelector(".prev").onclick = prevSlide;
+
+      // Auto slide
+      let auto = setInterval(nextSlide, 3000);
+
+      document.querySelector(".slider-container").onmouseenter = () =>
+        clearInterval(auto);
+      document.querySelector(".slider-container").onmouseleave = () => {
+        auto = setInterval(nextSlide, 3000);
+      };
+
+      // Resize fix
+      window.onresize = () => updateSlide(false);
+    </script>
   </body>
 </html>
